@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package lendo.users.v1;
+option go_package = "github.com/cvik/userd/pkg/usersv1";
+
+service Users {
+    rpc CreateUser(CreateUserRequest) returns (CreateUserResponse);
+	rpc GetUser(GetUserRequest) returns (GetUserResponse);
+	rpc DeleteUser(DeleteUserRequest) returns (DeleteUserResponse);
+	rpc ListUsers(ListUsersRequest) returns (stream ListUsersResponse);
+}
+
+message CreateUserRequest {
+    string name = 1;
+	string email = 2;
+}
+
+message CreateUserResponse {
+    string id = 1;
+}
+
+message GetUserRequest {
+    string id = 1;
+}
+
+message GetUserResponse {
+    User user = 1;
+}
+
+message DeleteUserRequest {
+    string id = 1;
+}
+
+message DeleteUserResponse {}
+
+message ListUsersRequest {}
+
+message ListUsersResponse {
+    User user = 1;
+}
+
+message User {
+    string id = 1;
+    string name = 2;
+	string email = 3;
+}
