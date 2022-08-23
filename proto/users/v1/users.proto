@@ -5,14 +5,14 @@ option go_package = "github.com/cvik/userd-go-grpc-demo/pkg/services/usersv1";
 
 service Users {
     rpc CreateUser(CreateUserRequest) returns (CreateUserResponse);
-	rpc GetUser(GetUserRequest) returns (GetUserResponse);
-	rpc DeleteUser(DeleteUserRequest) returns (DeleteUserResponse);
-	rpc ListUsers(ListUsersRequest) returns (stream ListUsersResponse);
+    rpc GetUser(GetUserRequest) returns (GetUserResponse);
+    rpc DeleteUser(DeleteUserRequest) returns (DeleteUserResponse);
+    rpc ListUsers(ListUsersRequest) returns (stream ListUsersResponse);
 }
 
 message CreateUserRequest {
     string name = 1;
-	string email = 2;
+    string email = 2;
 }
 
 message CreateUserResponse {
@@ -42,5 +42,5 @@ message ListUsersResponse {
 message User {
     string id = 1;
     string name = 2;
-	string email = 3;
+    string email = 3;
 }
