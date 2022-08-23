@@ -1,4 +1,4 @@
-module github.com/cvik/userd
+module github.com/cvik/userd-go-grpc-demo
 
 go 1.19
 

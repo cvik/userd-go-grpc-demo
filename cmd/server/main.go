@@ -3,8 +3,8 @@ package main
 import (
 	"log"
 
-	usersv1 "github.com/cvik/userd/pkg/services/users/v1"
-	"github.com/cvik/userd/pkg/store"
+	usersv1 "github.com/cvik/userd-go-grpc-demo/pkg/services/users/v1"
+	"github.com/cvik/userd-go-grpc-demo/pkg/store"
 )
 
 func main() {

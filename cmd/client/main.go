@@ -4,7 +4,7 @@ import (
 	"context"
 	"log"
 
-	usersv1 "github.com/cvik/userd/pkg/services/users/v1"
+	usersv1 "github.com/cvik/userd-go-grpc-demo/pkg/services/users/v1"
 )
 
 func main() {

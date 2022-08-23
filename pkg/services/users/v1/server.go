@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"net"
 
-	"github.com/cvik/userd/pkg/store"
+	"github.com/cvik/userd-go-grpc-demo/pkg/store"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/reflection"
