@@ -32,10 +32,10 @@ Then run the server in a separate shell `go run cmd/servermain.go`.
 When the server is running we can call it with grpcurl like so:
 
 ```bash
-$ grpcurl -plaintext -d '{"name": "Leffe", "Email": "leffe@awesome.io"}' localhost:1998 lendo.users.v1.Users/CreateUser
-$ grpcurl -plaintext -d '{"id": "e7390ac4-cec8-4a54-bfc1-b3c322b61128"}' localhost:1998 lendo.users.v1.Users/GetUser
-$ grpcurl -plaintext -d '{"id": "e7390ac4-cec8-4a54-bfc1-b3c322b61128"}' localhost:1998 lendo.users.v1.Users/DeleteUser
-$ grpcurl -plaintext localhost:1998 lendo.users.v1.Users/ListUsers
+$ grpcurl -plaintext -d '{"name": "Leffe", "Email": "leffe@awesome.io"}' localhost:1998 users.v1.Users/CreateUser
+$ grpcurl -plaintext -d '{"id": "e7390ac4-cec8-4a54-bfc1-b3c322b61128"}' localhost:1998 users.v1.Users/GetUser
+$ grpcurl -plaintext -d '{"id": "e7390ac4-cec8-4a54-bfc1-b3c322b61128"}' localhost:1998 users.v1.Users/DeleteUser
+$ grpcurl -plaintext localhost:1998 users.v1.Users/ListUsers
 ```
 
 You can inspect what is supported by the service by using it's built-in reflection
@@ -43,7 +43,7 @@ capabilities:
 
 ```bash
 $ grpcurl -plaintext localhost:1998 list
-$ grpcurl -plaintext localhost:1998 describe lendo.users.v1.Users
+$ grpcurl -plaintext localhost:1998 describe users.v1.Users
 ```
 
 You can describe individual RPCs and messages as well. See `grpcurl --help` for more info.

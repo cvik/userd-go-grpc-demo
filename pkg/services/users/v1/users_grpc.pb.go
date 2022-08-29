@@ -38,7 +38,7 @@ func NewUsersClient(cc grpc.ClientConnInterface) UsersClient {
 
 func (c *usersClient) CreateUser(ctx context.Context, in *CreateUserRequest, opts ...grpc.CallOption) (*CreateUserResponse, error) {
 	out := new(CreateUserResponse)
-	err := c.cc.Invoke(ctx, "/lendo.users.v1.Users/CreateUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/users.v1.Users/CreateUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -47,7 +47,7 @@ func (c *usersClient) CreateUser(ctx context.Context, in *CreateUserRequest, opt
 
 func (c *usersClient) GetUser(ctx context.Context, in *GetUserRequest, opts ...grpc.CallOption) (*GetUserResponse, error) {
 	out := new(GetUserResponse)
-	err := c.cc.Invoke(ctx, "/lendo.users.v1.Users/GetUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/users.v1.Users/GetUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -56,7 +56,7 @@ func (c *usersClient) GetUser(ctx context.Context, in *GetUserRequest, opts ...g
 
 func (c *usersClient) DeleteUser(ctx context.Context, in *DeleteUserRequest, opts ...grpc.CallOption) (*DeleteUserResponse, error) {
 	out := new(DeleteUserResponse)
-	err := c.cc.Invoke(ctx, "/lendo.users.v1.Users/DeleteUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/users.v1.Users/DeleteUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -64,7 +64,7 @@ func (c *usersClient) DeleteUser(ctx context.Context, in *DeleteUserRequest, opt
 }
 
 func (c *usersClient) ListUsers(ctx context.Context, in *ListUsersRequest, opts ...grpc.CallOption) (Users_ListUsersClient, error) {
-	stream, err := c.cc.NewStream(ctx, &Users_ServiceDesc.Streams[0], "/lendo.users.v1.Users/ListUsers", opts...)
+	stream, err := c.cc.NewStream(ctx, &Users_ServiceDesc.Streams[0], "/users.v1.Users/ListUsers", opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -145,7 +145,7 @@ func _Users_CreateUser_Handler(srv interface{}, ctx context.Context, dec func(in
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/lendo.users.v1.Users/CreateUser",
+		FullMethod: "/users.v1.Users/CreateUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(UsersServer).CreateUser(ctx, req.(*CreateUserRequest))
@@ -163,7 +163,7 @@ func _Users_GetUser_Handler(srv interface{}, ctx context.Context, dec func(inter
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/lendo.users.v1.Users/GetUser",
+		FullMethod: "/users.v1.Users/GetUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(UsersServer).GetUser(ctx, req.(*GetUserRequest))
@@ -181,7 +181,7 @@ func _Users_DeleteUser_Handler(srv interface{}, ctx context.Context, dec func(in
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/lendo.users.v1.Users/DeleteUser",
+		FullMethod: "/users.v1.Users/DeleteUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(UsersServer).DeleteUser(ctx, req.(*DeleteUserRequest))
@@ -214,7 +214,7 @@ func (x *usersListUsersServer) Send(m *ListUsersResponse) error {
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Users_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "lendo.users.v1.Users",
+	ServiceName: "users.v1.Users",
 	HandlerType: (*UsersServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

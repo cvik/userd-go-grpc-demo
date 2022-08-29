@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	log.Println("Creating client to 'lendo.users.v1.Users' service...")
+	log.Println("Creating client to 'users.v1.Users' service...")
 	client, err := usersv1.NewClient("localhost", 1998, "testClient")
 	if err != nil {
 		log.Fatal(err)

@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package lendo.users.v1;
+package users.v1;
 option go_package = "github.com/cvik/userd-go-grpc-demo/pkg/services/usersv1";
 
 service Users {
